@@ -1,0 +1,10 @@
+export const CHANGE_CITY_TO = "CHANGE_CITY_TO" as const
+export const CHANGE_CITY_FROM = "CHANGE_CITY_FROM" as const
+export const CHANGE_DATE_COLLECTION = "CHANGE_DATE_COLLECTION" as const
+export const CHANGE_DELIVERY_METHOD = "CHANGE_DELIVERY_METHOD" as const
+export const CHANGE_SPEED = "CHANGE_SPEED" as const
+export const CHANGE_MOVERS = "CHANGE_MOVERS" as const
+export const CHANGE_FLOOR = "CHANGE_FLOOR" as const
+export const CHANGE_ELEVATOR = "CHANGE_ELEVATOR" as const
+export const CHANGE_CARGO_COST = "CHANGE_CARGO_COST" as const
+export const CHANGE_INSURANCE = "CHANGE_INSURANCE" as const

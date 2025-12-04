@@ -1,0 +1,60 @@
+:root {
+  /* Цвета */
+  --color-white: #FFFFFF;
+  --color-black: #2C2C2C;
+  --color-green: #6DA34D;
+
+  --color-gray-background: #F5F4F3;
+  --color-gray-border: #CFCFCF;
+  --color-gray-elements: #F3F3F3;
+  --color-gray-text-med: rgba(44, 44, 44, 0.8);
+  --color-gray-caption-light: rgba(44, 44, 44, 0.21);
+  --color-gray-caption-med: rgba(44, 44, 44, 0.35);
+  --color-gray-caption-dark: rgba(44, 44, 44, 0.5);
+  
+  /* Синие оттенки */
+  --color-blue-accent: #00649C;
+  --color-blue-hover: #07466a;
+  --color-blue-elements: #D9E4F6;
+  --color-blue-border: rgba(0, 100, 156, 0.3);
+  --color-blue-sky: #3F8BFF;
+  
+  /* Размеры шрифтов */
+  --font-size-xxs: 8px;
+  --font-size-xs: 12px;
+  --font-size-s: 15px;
+  --font-size-m: 18px;
+  --font-size-l: 20px;
+  --font-size-xl: 22px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 34px;
+  --font-size-5xl: 38px;
+  --font-size-6xl: 62px;
+  --font-size-7xl: 132px;
+
+  --border-radius-xs: 10px;
+  --border-radius-s: 25px;
+  --border-radius-m: 28px;
+  --border-radius-l: 40px;
+  --border-radius-xl: 105px;
+}
+
+/* Глобальные стили приложения */
+body {
+  background-color: var(--color-gray-background);
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--color-black);
+  line-height: 1.6;
+}
+
+/* Глобальные утилитные классы */
+.container {
+  max-width: 1542px;
+  margin: 0 auto;
+  padding: 45px 45px 113px 45px;
+}
+
+p{
+  margin: 0;
+}

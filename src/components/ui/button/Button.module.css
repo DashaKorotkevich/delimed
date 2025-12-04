@@ -1,0 +1,43 @@
+/* Button.module.css */
+.button {
+  border-radius: var(--border-radius-s);
+  color: var(--color-white);
+  background-color: var(--color-blue-accent);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  width: fit-content;
+}
+
+.button:hover {
+  background-color: var(--color-blue-hover);
+}
+
+/* Размеры */
+.small {
+  height: 46px;
+  padding: 11px 57px;
+  font-size: var(--font-size-l);
+}
+
+.medium {
+  height: 55px;
+  padding: 14px 34.5px;
+  font-size: var(--font-size-xl);
+}
+
+.large {
+  height: 66px;
+  padding: 19px 27px;
+  font-size: var(--font-size-xl);
+}
+
+/* Позиционирование */
+.absolute {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
