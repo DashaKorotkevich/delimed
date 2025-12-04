@@ -19,20 +19,20 @@
 /* Размеры */
 .small {
   height: 46px;
-  padding: 11px 57px;
-  font-size: var(--font-size-l);
+  padding: 11px 37px;
+  font-size: var(--font-size-m);
 }
 
 .medium {
   height: 55px;
-  padding: 14px 34.5px;
-  font-size: var(--font-size-xl);
+  padding: 11px 37px;
+  font-size: var(--font-size-l);
 }
 
 .large {
   height: 66px;
   padding: 19px 27px;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
 }
 
 /* Позиционирование */

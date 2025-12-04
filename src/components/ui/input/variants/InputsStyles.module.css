@@ -1,10 +1,10 @@
 .homeInput{
-    height: 86px;
+    height: 80px;
     border-radius: var(--border-radius-m);
     border: none;
     background-color: var(--color-gray-elements);
     width: 450px;
-    padding: 37px 22px 22px 22px;
+    padding: 30px 22px 10px 22px;
     position: relative;
     color: var(--color-black);
     font-size: var(--font-size-m);
@@ -21,7 +21,7 @@
     position: relative;
 }
 
-.label{
+.homeLabel{
     color: var(--color-gray-caption-med);
     font-size: var(--font-size-s);
     font-weight: 400;
@@ -31,7 +31,7 @@
     z-index: 2;
 }
 
-.suggestions {
+.homeSuggestions {
   position: absolute;
   top: 100%;
   left: 0;
@@ -45,19 +45,86 @@
   transition: opacity 0.2s ease; /* плавное исчезновение */
 }
 
-.suggestions.hidden {
+.homeSuggestions.hidden {
   display: none;
   /* или opacity: 0; pointer-events: none; для плавности */
 }
 
-.suggestionItem {
+.homeSuggestionItem {
   padding: 8px 12px;
   cursor: pointer;
 }
 
-.suggestionItem:hover {
+.homeSuggestionItem:hover {
   background-color: #f5f5f5;
 }
 .homeInputContainer {
   position: relative; /* ← важно для absolute позиционирования подсказок */
 }
+
+.calcInput{
+    height: 46px;
+    border-radius: var(--border-radius-xs);
+    border: 0.5px solid var(--color-gray-border);
+    background-color: var(--color-white);
+    width: 250px;
+    padding: 15px 13px 8px 13px;
+    position: relative;
+    color: var(--color-black);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    outline: none;
+}
+
+.calcInput::placeholder {
+    opacity: 1;
+    color: var(--color-black);
+}
+
+.calcInputContainer{
+    position: relative;
+}
+
+.calcLabel{
+    color: var(--color-gray-caption-med);
+    font-size: var(--font-size-xxxs);
+    font-weight: 400;
+    position: absolute;
+    left: 13px;
+    top: 8px;
+    z-index: 2;
+}
+
+.calcSuggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 100px;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: opacity 0.2s ease; /* плавное исчезновение */
+  font-size: var(--font-size-xs);
+  width: 250px;
+}
+
+.calcSuggestions.hidden {
+  display: none;
+  /* или opacity: 0; pointer-events: none; для плавности */
+}
+
+.calcSuggestionItem {
+  padding: 4px 6px;
+  cursor: pointer;
+}
+
+.calcSuggestionItem:hover {
+  background-color: #f5f5f5;
+}
+.calcInputContainer {
+  position: relative; /* ← важно для absolute позиционирования подсказок */
+}
+

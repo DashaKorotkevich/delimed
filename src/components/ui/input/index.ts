@@ -1,2 +1,2 @@
 export { default as Input } from './Input';
-export { HomeInput, SecondaryInput } from './variants';
+export { CityInput, DeliveryMethodInput, DateInput, TypeCargoInput, BaseInput } from './variants';

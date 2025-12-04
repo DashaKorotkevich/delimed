@@ -1,5 +1,128 @@
 .main {
+  gap: 31px;
+  display: grid;
+  grid-template-columns: 1fr 2.22fr 1.19fr;;
+  width: 100%; /* общая ширина */
+}
+
+.mainSection{
+  background-color: #fff;
+  border-radius: var(--border-radius-m);
+  height: 70vh;
+  padding: 20px 22px;
+}
+
+.h1{
+  margin: 0;
+  font-size: var(--font-size-l);
+  margin-bottom: 10px;
+}
+
+.formContainerImg{
+  width: 20px;
+  height: 20px;
+}
+
+.formContainerRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.calcForm{
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 25px;
+}
+
+.formContainerInputs{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px
+  
+}
+
+.optionItemsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 450px; /* ограничиваем высоту для появления скролла */
+  overflow-y: auto; /* вертикальная прокрутка */
+  padding-right: 10px; /* отступ для скроллбара */
+}
+
+.optionItem{
+  background-color: var(--color-gray-background);
+  border-radius: var(--border-radius-s);
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.optionItemRowContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.optionItemRowItemName{
+  font-size: var(--font-size-xxs);
+  color: var(--color-black);
+  font-weight: 600;
+}
+
+.optionItemRowItem{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.optionItemRowItemPrice{
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+/* Индикатор загрузки */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 16px;
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2c5aa0;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loadingText {
+  color: #2c5aa0;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+.noResults {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 40px;
+}
+
+.cargoContainer{
+  height: 245px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

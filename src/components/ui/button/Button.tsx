@@ -9,9 +9,10 @@ interface ButtonProps {
   style?: React.CSSProperties;
   className?: string;
   to?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-function Button({ children, size = 'medium', onClick, style, className, to }: ButtonProps) {
+function Button({ children, size = 'medium', onClick, style, className, to, type = 'button' }: ButtonProps) {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -23,6 +24,7 @@ function Button({ children, size = 'medium', onClick, style, className, to }: Bu
 
   return (
     <button 
+      type={type}
       className={`${styles.button} ${styles[size]} ${className || ''}`}
       style={style}
       onClick={handleClick}

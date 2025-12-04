@@ -1,0 +1,31 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 44px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-s);
+  margin-bottom: 42px;
+}
+
+.logo {
+  height: 55px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+  font-size: var(--font-size-m);
+}
+
+.navLink {
+  color: var(--color-black);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: var(--color-blue-accent);
+}

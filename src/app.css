@@ -20,7 +20,8 @@
   --color-blue-sky: #3F8BFF;
   
   /* Размеры шрифтов */
-  --font-size-xxs: 8px;
+  --font-size-xxxs: 8px;
+  --font-size-xxs: 10px;
   --font-size-xs: 12px;
   --font-size-s: 15px;
   --font-size-m: 18px;
@@ -33,7 +34,8 @@
   --font-size-6xl: 62px;
   --font-size-7xl: 132px;
 
-  --border-radius-xs: 10px;
+  --border-radius-xxs: 10px;
+  --border-radius-xs: 15px;
   --border-radius-s: 25px;
   --border-radius-m: 28px;
   --border-radius-l: 40px;
@@ -50,7 +52,7 @@ body {
 
 /* Глобальные утилитные классы */
 .container {
-  max-width: 1542px;
+  max-width: 1370px;
   margin: 0 auto;
   padding: 45px 45px 113px 45px;
 }

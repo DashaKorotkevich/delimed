@@ -8,31 +8,46 @@ import {
   CHANGE_FLOOR,
   CHANGE_ELEVATOR,
   CHANGE_CARGO_COST,
-  CHANGE_INSURANCE
+  CHANGE_INSURANCE,
+  CHANGE_DATA_CITY_FROM_COMPLETED,
+  CHANGE_DATA_CITY_TO_COMPLETED,
+  CHANGE_TYPE_CARGO,
+  CHANGE_WEIGHT,
+  CHANGE_VOLUME,
 } from "./constants"
 
 export interface FormState {
   cityFrom: string | null;
   cityTo: string | null;
-  dateCollection: Date | null;
-  deliveryMethod: 'pickup' | 'door';
+  dateCollection: string;
+  deliveryMethod: string;
   speed: 'urgent' | 'economy' | 'express' | null;
   movers: boolean;
   floor?: number | null;
   elevator?: boolean;
   cargoCost: number | null;
   insurance: boolean;
+  dataCityFromCompleted: boolean;
+  dataCityToCompleted: boolean;
+  typeCargo: string | null;
+  weight: string | null;
+  volume: string | null;
 }
 
 export const InitialState: FormState = {
   cityFrom: null,
   cityTo: null,
-  dateCollection: null,
+  dateCollection: '05.12.2025',
   deliveryMethod: 'pickup',
   speed: null,
   movers: false,
   cargoCost: null,
   insurance: true,
+  dataCityFromCompleted: false,
+  dataCityToCompleted: false,
+  typeCargo: 'Медицинская мебель',
+  weight: '',
+  volume: '',
 }
 
 export interface ChangeCityFromPayload {
@@ -42,10 +57,10 @@ export interface ChangeCityToPayload {
   cityTo: string | null;
 }
 export interface ChangeDateCollectionPayload {
-  dateCollection: Date | null;
+  dateCollection: string;
 }
 export interface ChangeDeliveryMethodPayload {
-  deliveryMethod: 'pickup' | 'door';
+  deliveryMethod: string;
 }
 export interface ChangeSpeedPayload {
   speed: 'urgent' | 'economy' | 'express' | null;
@@ -64,6 +79,53 @@ export interface ChangeCargoCostPayload {
 }
 export interface ChangeInsurancePayload {
   insurance: boolean;
+}
+
+export interface ChangeDataCityFromCompletedPayload {
+  dataCityFromCompleted: boolean;
+}
+
+export interface ChangeDataCityToCompletedPayload {
+  dataCityToCompleted: boolean;
+}
+
+export interface ChangeTypeCargoPayload {
+  typeCargo: string;
+}
+
+export interface ChangeWeightPayload {
+  weight: string;
+}
+
+export interface ChangeVolumePayload {
+  volume: string;
+}
+
+
+
+export interface ChangeWeightAction {
+  type: typeof CHANGE_WEIGHT;
+  payload: ChangeWeightPayload;
+}
+
+export interface ChangeVolumeAction {
+  type: typeof CHANGE_VOLUME;
+  payload: ChangeVolumePayload;
+}
+
+export interface ChangeTypeCargoAction {
+  type: typeof CHANGE_TYPE_CARGO;
+  payload: ChangeTypeCargoPayload;
+}
+
+export interface ChangeDataCityToCompletedAction {
+  type: typeof CHANGE_DATA_CITY_TO_COMPLETED;
+  payload: ChangeDataCityToCompletedPayload;
+}
+
+export interface ChangeDataCityFromCompletedAction {
+  type: typeof CHANGE_DATA_CITY_FROM_COMPLETED;
+  payload: ChangeDataCityFromCompletedPayload;
 }
 
 export interface ChangeCityFromAction {
@@ -117,4 +179,9 @@ export type FormActionTypes =
   | ChangeFloorAction 
   | ChangeElevatorAction 
   | ChangeCargoCostAction 
-  | ChangeInsuranceAction;
+  | ChangeInsuranceAction
+  | ChangeDataCityFromCompletedAction
+  | ChangeTypeCargoAction
+  | ChangeWeightAction
+  | ChangeVolumeAction
+  | ChangeDataCityToCompletedAction;

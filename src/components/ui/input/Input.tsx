@@ -1,23 +1,35 @@
 // components/ui/input/Input.tsx
-import { HomeInput } from '@components/ui/input/variants/HomeInput.tsx';
-import { SecondaryInput } from '@components/ui/input/variants/SecondaryInput.tsx';
+import { CityInput } from '@components/ui/input/variants/CityInput.tsx';
+import { DeliveryMethodInput } from '@components/ui/input/variants/DeliveryMethodInput.tsx';
+import { DateInput } from '@components/ui/input/variants/DateInput.tsx';
+import { TypeCargoInput } from '@components/ui/input/variants/TypeCargoInput.tsx';
+import { BaseInput } from '@components/ui/input/variants/BaseInput.tsx';
 
 export interface InputProps {
-  variant?: 'HomeInput' | 'secondary';
+  variant?: 'CityInput' | 'DeliveryMethodInput' | 'DateInput' | 'TypeCargoInput' | 'BaseInput';
   // общие пропсы
   placeholder?: string;
   value?: string;
   onChange?: (value: string) => void;
   label?: string;
   suggestions?: string[];
+  prefVariant?: string;
+  onCityCompleted?: (type: 'from' | 'to') => void;
+  disabled?: boolean;
 }
 
-export function Input({ variant = 'HomeInput', ...props }: InputProps) {
+export function Input({ variant, ...props }: InputProps) {
   switch (variant) {
-    case 'HomeInput':
-      return <HomeInput {...props} />;
-    case 'secondary':
-      return <SecondaryInput {...props} />;
+    case 'CityInput':
+      return <CityInput {...props} />;
+    case 'DateInput':
+      return <DateInput {...props} />;
+    case 'DeliveryMethodInput':
+      return <DeliveryMethodInput {...props} />;
+    case 'TypeCargoInput':
+      return <TypeCargoInput {...props} />;
+    case 'BaseInput':
+      return <BaseInput {...props} />;
   }
 }
 

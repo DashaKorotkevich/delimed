@@ -15,5 +15,14 @@ export default defineConfig({
       '@stores': path.resolve(__dirname, './src/stores'),
       '@api': path.resolve(__dirname, './src/api')
     }
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://178.72.152.55:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 })

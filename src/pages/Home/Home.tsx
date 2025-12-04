@@ -14,7 +14,6 @@ import {useCitySuggestions} from '@shared/hooks/useCitySuggestions'
 import { useAppDispatch } from '../../store/hooks';
 import { changeCityFrom, changeCityTo } from '../../store/actions';
 
-
 function Home() {
   const dispatch = useAppDispatch();
 
@@ -37,6 +36,7 @@ function Home() {
     dispatch(changeCityTo({ cityTo: value }));
         console.log('Диспатч вызван с:', value);
   };
+
 
   return (
     <div>
@@ -122,11 +122,11 @@ function Home() {
           <h2 className={styles.h2}>Начните заполнять черновик заявки</h2>
           <form action="" className={styles.heroForm}>
               <div className={styles.formContainer}>
-                <Input variant='HomeInput' placeholder="Введите город" label="Откуда" value={inputValueFrom} onChange={handleCityFromChange} suggestions={suggestionsFrom} />
+                <Input variant='CityInput' placeholder="Введите город" label="Откуда" value={inputValueFrom} onChange={handleCityFromChange} suggestions={suggestionsFrom} prefVariant="home" />
                 <img src={arrow} alt="" />
-                <Input variant='HomeInput' placeholder="Введите город" label="Куда" value={inputValueTo} onChange={handleCityToChange} suggestions={suggestionsTo}/>
+                <Input variant='CityInput' placeholder="Введите город" label="Куда" value={inputValueTo} onChange={handleCityToChange} suggestions={suggestionsTo} prefVariant="home"/>
               </div>
-              <Button size='medium' className="button-hover-effect" to="/calculator">Продолжить</Button>
+              <Button type="button" size='medium' className="button-hover-effect" to="/calculator">Продолжить</Button>
           </form>
         </section>
         <section>

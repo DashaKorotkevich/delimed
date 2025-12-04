@@ -8,7 +8,12 @@ import {
   CHANGE_FLOOR,
   CHANGE_ELEVATOR,
   CHANGE_CARGO_COST,
-  CHANGE_INSURANCE 
+  CHANGE_INSURANCE,
+  CHANGE_DATA_CITY_FROM_COMPLETED,
+  CHANGE_DATA_CITY_TO_COMPLETED,
+  CHANGE_TYPE_CARGO,
+  CHANGE_WEIGHT,
+  CHANGE_VOLUME,
 } from "./constants"
 
 import type { 
@@ -21,7 +26,12 @@ import type {
   ChangeFloorPayload,
   ChangeElevatorPayload,
   ChangeCargoCostPayload,
-  ChangeInsurancePayload 
+  ChangeInsurancePayload,
+  ChangeDataCityFromCompletedPayload,
+  ChangeDataCityToCompletedPayload,
+  ChangeTypeCargoPayload,
+  ChangeWeightPayload,
+  ChangeVolumePayload,
 } from './types'
 
 import type { 
@@ -34,7 +44,12 @@ import type {
   ChangeFloorAction,
   ChangeElevatorAction,
   ChangeCargoCostAction,
-  ChangeInsuranceAction 
+  ChangeInsuranceAction,
+  ChangeDataCityFromCompletedAction,
+  ChangeDataCityToCompletedAction,
+  ChangeTypeCargoAction,
+  ChangeWeightAction,
+  ChangeVolumeAction,
 } from './types'
 
 export const changeCityFrom = (payload: ChangeCityFromPayload): ChangeCityFromAction => 
@@ -66,3 +81,18 @@ export const changeCargoCost = (payload: ChangeCargoCostPayload): ChangeCargoCos
 
 export const changeInsurance = (payload: ChangeInsurancePayload): ChangeInsuranceAction => 
   ({ type: CHANGE_INSURANCE, payload })
+
+export const changeDataCityFromCompleted = (payload: ChangeDataCityFromCompletedPayload): ChangeDataCityFromCompletedAction => 
+  ({ type: CHANGE_DATA_CITY_FROM_COMPLETED, payload })
+
+export const changeDataCityToCompleted = (payload: ChangeDataCityToCompletedPayload): ChangeDataCityToCompletedAction => 
+  ({ type: CHANGE_DATA_CITY_TO_COMPLETED, payload })
+
+export const changeTypeCargo = (payload: ChangeTypeCargoPayload): ChangeTypeCargoAction => 
+  ({ type: CHANGE_TYPE_CARGO, payload })
+
+export const changeWeight = (payload: ChangeWeightPayload): ChangeWeightAction => 
+  ({ type: CHANGE_WEIGHT, payload })
+
+export const changeVolume = (payload: ChangeVolumePayload): ChangeVolumeAction => 
+  ({ type: CHANGE_VOLUME, payload })
