@@ -1,14 +1,11 @@
 import { useState } from 'react';
+import { BaseInput, type BaseInputProps } from './BaseInput';
 import inputsStyles from './InputsStyles.module.css'
 
-interface CityInputProps {
-  placeholder?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-  label?: string;
+export interface CityInputProps extends Omit<BaseInputProps, 'type'>{
   suggestions?: string[];
-  prefVariant?: string;
-  onCityCompleted?: (type: 'from' | 'to') => void;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
 }
 
 export function CityInput({ 
@@ -17,57 +14,54 @@ export function CityInput({
   onChange, 
   label, 
   suggestions, 
-  prefVariant,
-  onCityCompleted // добавляем в деструктуризацию
+  className,
+  disabled,
+  onBlur,
+  onFocus
 }: CityInputProps) {
-  const [showSuggestions, setShowSuggestions] = useState(false);
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
-  const handleSuggestionClick = (suggestion: string) => {
-    onChange?.(suggestion); 
-    setShowSuggestions(false);
-    
-    // Определяем тип города на основе label и вызываем колбэк
-    if (label && onCityCompleted) {
-      if (label.toLowerCase().includes('откуда') || label === 'Откуда') {
-        onCityCompleted('from');
-      } else if (label.toLowerCase().includes('куда') || label === 'Куда') {
-        onCityCompleted('to');
+    const handleSuggestionClick = (suggestion: string) => {
+      onChange?.(suggestion); 
+      setShowSuggestions(false);
+
+    };
+
+    const handleInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+      if (suggestions && suggestions.length > 0) {
+        setShowSuggestions(true);
       }
+      onFocus?.(e);
+    };
+
+    const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+      setTimeout(() => setShowSuggestions(false), 200);
+      onBlur?.(e);
     }
-  };
 
-  const handleInputChange = (newValue: string) => {
-    onChange?.(newValue);
-    setShowSuggestions(true); 
-  };
-
-  const handleInputFocus = () => {
-    if (suggestions && suggestions.length > 0) {
-      setShowSuggestions(true);
-    }
-  };
-
-  const handleInputBlur = () => {
-    setTimeout(() => setShowSuggestions(false), 200);
-  };
+    const handleChange = (newValue: string) => {
+      onChange?.(newValue);
+      setShowSuggestions(true); 
+    };
 
   return (
-    <div className={inputsStyles[`${prefVariant}InputContainer`]}>
-      {label && <span className={inputsStyles[`${prefVariant}Label`]}>{label}</span>}
-      <input
+    <div className={inputsStyles.baseInputContainer}>
+      <BaseInput
+        label={label}
         type="text"
         placeholder={placeholder}
         value={value}
-        onChange={(e) => handleInputChange(e.target.value)}
+        onChange={handleChange}
+        className={className}
+        disabled={disabled}
         onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        className={inputsStyles[`${prefVariant}Input`]}
+        onBlur={handleInputBlur} 
       />
-      <div className={`${inputsStyles[`${prefVariant}Suggestions`]} ${!showSuggestions ? inputsStyles.hidden : ''}`}>
+      <div className={`${inputsStyles.suggestionsContainer} ${!showSuggestions ? inputsStyles.suggestionsContainerHidden : ''}`}>
         {suggestions?.map((suggestion, index) => (
           <div 
             key={index}
-            className={inputsStyles[`${prefVariant}SuggestionItem`]}
+            className={inputsStyles.suggestionItem}
             onMouseDown={(e) => {
               e.preventDefault();
               handleSuggestionClick(suggestion);
@@ -80,3 +74,17 @@ export function CityInput({
     </div>
   );
 }
+
+/*
+1. 🖥️ Браузер: "Пользователь ввёл 'М' в input"
+   ↓
+2. ⚛️ React: "Вызываю handleNativeChange(e)"
+   ↓  
+3. 🏗️ BaseInput: "Ага, событие change! Значит нужно вызвать onChange('М')"
+   ↓
+4. 🔗 BaseInput вызывает: onChange?.(e.target.value)
+   ↓
+5. 🏙️ CityInput получает вызов: "О! Мне пришло 'М' в handleChange!"
+   ↓
+6. 🏙️ CityInput: "Вызываю свою логику и пробрасываю дальше"
+*/

@@ -128,3 +128,117 @@
   position: relative; /* ← важно для absolute позиционирования подсказок */
 }
 
+
+/********************************************
+.baseInputCommon{
+    position: relative;
+    color: var(--color-black);
+    outline: none;
+    font-weight: 500;
+}
+
+.homeCityInput {
+  composes: baseInputCommon;
+  background-color: var(--color-gray-elements);
+  border: none;
+  height: 80px;
+  width: 450px;
+  padding: 30px 22px 10px 22px;
+  font-size: var(--font-size-m);
+  border-radius: var(--border-radius-m);
+
+}
+
+.otherInput {
+  composes: baseInputCommon;
+  background-color: var(--color-white);
+  height: 45px;
+  width: 270px;
+  font-weight: 500;
+  font-size: var(--font-size-xs);
+  padding: 15px 13px 8px 13px;
+  border-radius: var(--border-radius-xs);
+  border: 0.5px solid var(--color-gray-border);
+
+}
+
+.baseInputLabel{
+    color: var(--color-gray-caption-med);
+    position: absolute;
+    z-index: 2;
+    font-weight: 400;
+}
+
+.homeCityInputLabel{
+    composes: baseInputLabel;
+    font-size: var(--font-size-s);
+    left: 22px;
+    top: 15px;
+}
+
+.otherInputLabel{
+    composes: baseInputLabel;
+    font-size: var(--font-size-xxxs);
+    left: 13px;
+    top: 8px;
+}
+
+.baseInputCommon::placeholder {
+    opacity: 1;
+    color: var(--color-black);
+}
+
+.baseInputContainer{
+    position: relative;
+}
+
+.suggestionsContainerCommon {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: opacity 0.2s ease; 
+}
+
+.otherSuggestionsContainer{
+    composes: suggestionsContainerCommon;
+    max-height: 100px;
+    font-size: var(--font-size-xs);
+    width: 250px;
+}
+
+.homeCityInputSuggestionsContainer{
+    composes: suggestionsContainerCommon;
+    max-height: 200px;
+}
+
+.suggestionsContainerHidden {
+  display: none;
+
+}
+
+.suggestionItemCommon {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.otherSuggestionItem {
+  composes: suggestionsContainerCommon;
+  padding: 4px 6px;
+}
+
+.homeCityInputSuggestionItem {
+  composes: suggestionsContainerCommon;
+  padding: 8px 12px;
+}
+
+.suggestionItemCommon:hover {
+  background-color: #f5f5f5;
+}
+
+******/

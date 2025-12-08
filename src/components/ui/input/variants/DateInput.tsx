@@ -1,29 +1,35 @@
-import inputsStyles from './InputsStyles.module.css'
+import { BaseInput, type BaseInputProps } from './BaseInput';
 
-interface DateInputProps {
-  placeholder?: string;
-  value?: string;
-  onChange?: (value: string) => void;
-  label?: string;
-  defaultValue?: string;
+// Расширяем BaseInputProps, НЕ меняя типы (пока работаем со string)
+export interface DateInputProps extends Omit<BaseInputProps, 'type'> {
+  // Пока оставляем всё как есть - value: string, onChange: (string) => void
+  // Позже переделаем на Date объекты
 }
 
-export function DateInput({ placeholder, value, onChange, label, defaultValue = '2025-12-05' }: DateInputProps) {
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e.target.value);
+export function DateInput({
+  className,
+  value,
+  onChange,
+  label,
+  placeholder,
+  disabled
+}: DateInputProps) {
+  
+  // Пока просто пробрасываем string (как было)
+  const handleChange = (text: string) => {
+    onChange?.(text);
   };
 
+  // Используем BaseInput внутри!
   return (
-    <div className={inputsStyles.calcInputContainer}>
-      {label && <span className={inputsStyles.calcLabel}>{label}</span>}
-      <input
-        type="date"
-        placeholder={placeholder}
-        value={value || defaultValue}
-        onChange={handleChange}
-        className={inputsStyles.calcInput}
-      />
-    </div>
+    <BaseInput
+      label={label}
+      placeholder={placeholder}
+      value={value}
+      onChange={handleChange}
+      type="date"
+      disabled={disabled}   
+      className={className}
+    />
   );
 }

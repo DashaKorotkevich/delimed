@@ -122,9 +122,9 @@ function Home() {
           <h2 className={styles.h2}>Начните заполнять черновик заявки</h2>
           <form action="" className={styles.heroForm}>
               <div className={styles.formContainer}>
-                <Input variant='CityInput' placeholder="Введите город" label="Откуда" value={inputValueFrom} onChange={handleCityFromChange} suggestions={suggestionsFrom} prefVariant="home" />
+                <Input variant='CityInput' placeholder="Введите город" label="Откуда" value={inputValueFrom} onChange={handleCityFromChange} suggestions={suggestionsFrom} className="home" />
                 <img src={arrow} alt="" />
-                <Input variant='CityInput' placeholder="Введите город" label="Куда" value={inputValueTo} onChange={handleCityToChange} suggestions={suggestionsTo} prefVariant="home"/>
+                <Input variant='CityInput' placeholder="Введите город" label="Куда" value={inputValueTo} onChange={handleCityToChange} suggestions={suggestionsTo} className="home"/>
               </div>
               <Button type="button" size='medium' className="button-hover-effect" to="/calculator">Продолжить</Button>
           </form>

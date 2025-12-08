@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import inputsStyles from './InputsStyles.module.css'
 
-interface TypeCargoInputProps {
+export interface TypeCargoInputProps {
   placeholder?: string;
   value?: string;
   onChange?: (value: string) => void;

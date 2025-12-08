@@ -1,5 +1,5 @@
 export { CityInput } from './CityInput';
-export { DeliveryMethodInput } from './DeliveryMethodInput';
+export { NumberInput } from './NumberInput';
 export { DateInput } from './DateInput';
 export { TypeCargoInput } from './TypeCargoInput';
 export { BaseInput } from './BaseInput';

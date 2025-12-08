@@ -109,10 +109,10 @@ function Calculate() {
           <h1 className={styles.h1}>Заказ 1</h1>
           <div className={styles.cargoContainer}>
             <p>Груз 1</p>
-            <Input variant='TypeCargoInput' placeholder="Выберете тип" label="Тип груза" value={inputValueTypeCargo} onChange={handleTypeCargoChange} suggestions={suggestionsTypeCargo} prefVariant="calc"/>
-            <Input variant='BaseInput' placeholder="1.2" label="Вес, кг" value={inputValueWeight} onChange={handleWeightChange} prefVariant="calc"/>
-            <Input variant='BaseInput' placeholder="40×30×20" label="Габариты, см" value={inputValueVolume} onChange={handleVolumeChange} prefVariant="calc"/>
-            <Input variant='TypeCargoInput' disabled={disabled} placeholder="Стандартная" label="Защита от воздействий" prefVariant="calc"/>
+            {/*<Input variant='TypeCargoInput' placeholder="Выберете тип" label="Тип груза" value={inputValueTypeCargo} onChange={handleTypeCargoChange} suggestions={suggestionsTypeCargo} className="calc"/>*/}
+            <Input variant='BaseInput' placeholder="1.2" label="Вес, кг" value={inputValueWeight} onChange={handleWeightChange} className="calc"/>
+            <Input variant='BaseInput' placeholder="40×30×20" label="Габариты, см" value={inputValueVolume} onChange={handleVolumeChange} className="calc"/>
+            {/*<Input variant='TypeCargoInput' disabled={disabled} placeholder="Стандартная" label="Защита от воздействий" className="calc"/>*/}
           </div>
         </section>
         <section className={styles.mainSection}>
@@ -120,13 +120,13 @@ function Calculate() {
           <form action="" className={styles.calcForm}>
             <div className={styles.formContainerInputs}>
               <div className={styles.formContainerRow}>
-                <Input variant='CityInput' placeholder="Введите город" label="Откуда" value={inputValueFrom} onChange={handleCityFromChange} suggestions={suggestionsFrom} prefVariant="calc" onCityCompleted={handleCityCompleted}/>
+                <Input variant='CityInput' placeholder="Введите город" label="Откуда" value={inputValueFrom} onChange={handleCityFromChange} suggestions={suggestionsFrom} className="calc"/>
                 <img src={arrow} alt="" className={styles.formContainerImg}/>
-                <Input variant='CityInput' placeholder="Введите город" label="Куда" value={inputValueTo} onChange={handleCityToChange} suggestions={suggestionsTo} prefVariant="calc" onCityCompleted={handleCityCompleted}/>
+                <Input variant='CityInput' placeholder="Введите город" label="Куда" value={inputValueTo} onChange={handleCityToChange} suggestions={suggestionsTo} className="calc"/>
               </div>
               <div className={styles.formContainerRow}>
-                <Input variant='DateInput' placeholder="Введите дату" label="Дата сбора" value={inputValueDate} onChange={handleDataChange} prefVariant="calc"/>
-                <Input variant='DeliveryMethodInput' placeholder="Самовывоз" label="Способ" value={inputValueDeliveryMethod} onChange={handleDeliveryMethodChange} suggestions={suggestionsDeliveryMethod} prefVariant="calc"/>
+                <Input variant='DateInput' placeholder="Введите дату" label="Дата сбора" value={inputValueDate} onChange={handleDataChange} className="calc"/>
+                {/*<Input variant='DeliveryMethodInput' placeholder="Самовывоз" label="Способ" value={inputValueDeliveryMethod} onChange={handleDeliveryMethodChange} suggestions={suggestionsDeliveryMethod} prefVariant="calc"/>*/}
               </div>
             </div>
           </form>
